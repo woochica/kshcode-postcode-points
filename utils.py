@@ -84,9 +84,9 @@ class CSVWriter(object):
 
 
 if __name__ == '__main__':
-    ksh = KSHReader('Helysegnevkonyv_adattar_2010.xls')
-    geonames = GeoNamesReader('HU.txt')
+    ksh = KSHReader('in/Helysegnevkonyv_adattar_2010.xls')
+    geonames = GeoNamesReader('in/HU.txt')
     mapper = Mapper(ksh.items(), geonames.items())
     data = mapper.merge()
-    writer = CSVWriter('place_kshcode_postcode_points.csv')
+    writer = CSVWriter('out/place_kshcode_postcode_points.csv')
     writer.write(data)
